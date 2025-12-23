@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Aesthetic Architecture | Optimization Protocol</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --bg-dark: #070708;
             --accent-gold: #fbbf24;
-            --accent-glow: rgba(251, 191, 36, 0.6); 
+            --accent-glow: rgba(251, 191, 36, 0.6);
         }
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-dark);
             color: #f8fafc;
             overflow-x: hidden;
@@ -23,7 +24,7 @@
         .bg-glow {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 50% -10%, rgba(251, 191, 36, 0.35) 0%, transparent 70%),
                 radial-gradient(circle at 0% 100%, rgba(251, 191, 36, 0.2) 0%, transparent 60%),
                 radial-gradient(circle at 100% 50%, rgba(251, 191, 36, 0.15) 0%, transparent 50%),
@@ -53,7 +54,7 @@
             box-shadow: 0 25px 60px -15px rgba(0,0,0,0.95);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .glass-card:hover {
             border-color: rgba(251, 191, 36, 0.5);
             box-shadow: 0 0 50px rgba(251, 191, 36, 0.15);
@@ -136,20 +137,21 @@
 
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        /* Custom scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #070708; }
         ::-webkit-scrollbar-thumb { background: #1f1f23; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #fbbf24; }
     </style>
 </head>
-<body class="min-h-screen">
 
+<body class="min-h-screen">
     <div class="bg-glow"></div>
     <div class="glow-overlay"></div>
 
     <nav class="p-8 flex justify-between items-center max-w-6xl mx-auto relative z-10">
-        <div class="text-xl font-800 tracking-tighter uppercase text-white cursor-pointer" onclick="window.navigateTo('page-optin')">Aesthetic<span class="text-yellow-500">Architecture</span></div>
+        <div class="text-xl font-800 tracking-tighter uppercase text-white cursor-pointer" onclick="window.navigateTo('page-optin')">
+            Aesthetic<span class="text-yellow-500">Architecture</span>
+        </div>
         <div class="hidden md:flex space-x-10 text-[10px] font-bold tracking-[0.3em] text-gray-500 uppercase">
             <span class="hover:text-yellow-400 cursor-pointer" onclick="window.navigateTo('page-optin')">Protocol</span>
             <span class="hover:text-yellow-400 cursor-pointer" onclick="window.handleCoachingRedirect()">Coaching</span>
@@ -158,7 +160,6 @@
     </nav>
 
     <main id="app" class="max-w-5xl mx-auto px-6 pt-8 pb-24 relative z-10">
-        
         <!-- PAGE 1 — OPT-IN PAGE -->
         <div id="page-optin" class="step-transition">
             <div class="text-center mb-20">
@@ -194,9 +195,10 @@
                     <div class="space-y-5">
                         <input type="text" id="opt-name" placeholder="Full Name" class="input-field w-full p-4 rounded-xl text-sm">
                         <input type="email" id="opt-email" placeholder="Email Address" class="input-field w-full p-4 rounded-xl text-sm">
-                        <button type="button" id="optin-trigger" onclick="window.handleOptIn()" class="btn-primary w-full font-bold py-5 rounded-2xl text-[11px] uppercase tracking-[0.3em] mt-2 flex justify-center items-center gap-2">
+                        <button type="button" id="optin-trigger" class="btn-primary w-full font-bold py-5 rounded-2xl text-[11px] uppercase tracking-[0.3em] mt-2 flex justify-center items-center gap-2">
                             <span>Get Free Access</span>
                         </button>
+                        <p id="optin-error" class="hidden text-[11px] text-red-400/90 pt-2"></p>
                     </div>
                 </div>
             </div>
@@ -224,7 +226,6 @@
                 </div>
 
                 <div id="pdf-preview" class="hidden p-10 bg-black/40 border-b border-white/5 space-y-16">
-                    <!-- SECTION 1 -->
                     <section>
                         <h5 class="text-yellow-500 text-[11px] font-black uppercase tracking-[0.3em] mb-6">Phase 1: Craniofacial Mechanics</h5>
                         <div class="grid md:grid-cols-2 gap-8 mb-8">
@@ -247,7 +248,6 @@
                         </table>
                     </section>
 
-                    <!-- SECTION 2 -->
                     <section>
                         <h5 class="text-yellow-500 text-[11px] font-black uppercase tracking-[0.3em] mb-6">Phase 2: Silhouette Architecture (The V-Taper)</h5>
                         <p class="text-sm text-gray-400 mb-8 leading-relaxed">To achieve the ideal Golden Ratio (1.618 shoulder-to-waist), you must prioritize specific muscle groups that contribute to width without adding bulk to the waist.</p>
@@ -267,7 +267,6 @@
                         </div>
                     </section>
 
-                    <!-- SECTION 3 -->
                     <section>
                         <h5 class="text-yellow-500 text-[11px] font-black uppercase tracking-[0.3em] mb-6">Phase 3: Skeletal Decompression</h5>
                         <p class="text-sm text-gray-400 mb-6 leading-relaxed">Bad posture can subtract 1-2 inches from your height and hide your muscle definition.</p>
@@ -311,9 +310,7 @@
                 <h2 class="text-3xl font-bold text-white tracking-tight">Master Lead Directory</h2>
                 <button onclick="window.navigateTo('page-optin')" class="text-xs text-gray-500 hover:text-white uppercase tracking-widest">Close</button>
             </div>
-            <div id="leads-container" class="space-y-6">
-                <div class="flex justify-center py-10"><div class="loader text-yellow-500"></div></div>
-            </div>
+            <div id="leads-container" class="space-y-6"></div>
         </div>
 
         <!-- PASSWORD MODAL -->
@@ -334,75 +331,109 @@
         <button onclick="window.promptAdminAccess()" class="text-[8px] text-gray-700 hover:text-yellow-600 uppercase tracking-[0.2em] transition-colors cursor-pointer">Internal Lead Portal</button>
     </footer>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getFirestore, collection, addDoc, onSnapshot, doc, deleteDoc, query, orderBy } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'aesthetic-arch-v2';
-        const firebaseConfig = JSON.parse(__firebase_config);
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const auth = getAuth(app);
-
-        let currentUser = null;
-        let unsubscribeLeads = null;
-
-        const collectionPath = 'leads';
-        const getLeadsRef = () => collection(db, 'artifacts', appId, 'public', 'data', collectionPath);
-
-        // Navigation Logic
+    <script>
+        // ---------- NAV ----------
         window.navigateTo = (pageId) => {
             const pages = document.querySelectorAll('[id^="page-"]');
             pages.forEach(p => p.classList.add('hidden'));
-            
+
             const target = document.getElementById(pageId);
-            if(target) {
+            if (target) {
                 target.classList.remove('hidden');
-                if (pageId === 'page-admin') initLeadsListener();
+                if (pageId === 'page-admin') renderLeads();
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         };
 
-        // Redirect to Google Form
+        // ---------- COACHING REDIRECT ----------
         window.handleCoachingRedirect = () => {
-            window.open('https://docs.google.com/forms/d/e/1FAIpQLSdtjUwTfMM4aIhSHRZrqBURzFKPgJt06iGN5rGSM6eMYtkNKw/viewform?usp=publish-editor', '_blank');
+            window.open(
+                'https://docs.google.com/forms/d/e/1FAIpQLSdtjUwTfMM4aIhSHRZrqBURzFKPgJt06iGN5rGSM6eMYtkNKw/viewform?usp=publish-editor',
+                '_blank'
+            );
         };
 
-        // Form Submission - Opt-In
+        // ---------- OPTIN ----------
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email).trim());
+        }
+
+        function getStoredLeads() {
+            try { return JSON.parse(localStorage.getItem('aa_leads') || '[]'); }
+            catch { return []; }
+        }
+
+        function setStoredLeads(leads) {
+            localStorage.setItem('aa_leads', JSON.stringify(leads));
+        }
+
+        function showError(msg) {
+            const el = document.getElementById('optin-error');
+            el.textContent = msg;
+            el.classList.remove('hidden');
+        }
+
+        function clearError() {
+            const el = document.getElementById('optin-error');
+            el.textContent = '';
+            el.classList.add('hidden');
+        }
+
         window.handleOptIn = async () => {
+            clearError();
+
             const nameInput = document.getElementById('opt-name');
             const emailInput = document.getElementById('opt-email');
 
-            if (!nameInput.value || !emailInput.value) {
+            const name = (nameInput.value || '').trim();
+            const email = (emailInput.value || '').trim();
+
+            // Basic validation
+            if (!name) {
                 nameInput.classList.add('border-red-500/50');
-                setTimeout(() => nameInput.classList.remove('border-red-500/50'), 2000);
+                showError('Please enter your full name.');
+                setTimeout(() => nameInput.classList.remove('border-red-500/50'), 1800);
+                return;
+            }
+            if (!email || !isValidEmail(email)) {
+                emailInput.classList.add('border-red-500/50');
+                showError('Please enter a valid email address.');
+                setTimeout(() => emailInput.classList.remove('border-red-500/50'), 1800);
                 return;
             }
 
             const btn = document.getElementById('optin-trigger');
+            const original = btn.innerHTML;
             btn.innerHTML = '<div class="loader"></div>';
+            btn.disabled = true;
 
             try {
-                if (currentUser) {
-                    await addDoc(getLeadsRef(), {
-                        type: 'Opt-In',
-                        name: nameInput.value,
-                        email: emailInput.value,
-                        timestamp: new Date().toISOString()
-                    });
-                }
+                // Save lead locally
+                const leads = getStoredLeads();
+                leads.push({
+                    id: crypto?.randomUUID ? crypto.randomUUID() : String(Date.now()),
+                    type: 'Opt-In',
+                    name,
+                    email,
+                    timestamp: new Date().toISOString()
+                });
+                setStoredLeads(leads);
+
                 window.navigateTo('page-delivery');
             } catch (e) {
                 console.error(e);
+                // Even if storage fails, still let them through
                 window.navigateTo('page-delivery');
             } finally {
-                btn.innerHTML = '<span>Get Free Access</span>';
+                btn.innerHTML = original;
+                btn.disabled = false;
             }
         };
 
-        // UI Utils
+        // Attach click handler safely (works even if you remove onclick attr)
+        document.getElementById('optin-trigger').addEventListener('click', window.handleOptIn);
+
+        // ---------- ADMIN / LEADS ----------
         window.promptAdminAccess = () => {
             document.getElementById('password-modal').classList.remove('hidden');
             document.getElementById('admin-pass').focus();
@@ -417,7 +448,7 @@
                 const input = document.getElementById('admin-pass');
                 input.classList.add('border-red-500');
                 input.value = '';
-                setTimeout(() => input.classList.remove('border-red-500'), 1000);
+                setTimeout(() => input.classList.remove('border-red-500'), 900);
             }
         };
 
@@ -425,70 +456,38 @@
             document.getElementById('pdf-preview').classList.toggle('hidden');
         };
 
-        window.deleteLead = async (id) => {
-            if (!currentUser) return;
-            try {
-                await deleteDoc(doc(db, 'artifacts', appId, 'public', 'data', collectionPath, id));
-            } catch(e) { console.error(e); }
+        window.deleteLead = (id) => {
+            const leads = getStoredLeads().filter(l => l.id !== id);
+            setStoredLeads(leads);
+            renderLeads();
         };
 
-        // Auth & Listeners
-        const initAuth = async () => {
-            try {
-                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                    await signInWithCustomToken(auth, __initial_auth_token);
-                } else {
-                    await signInAnonymously(auth);
-                }
-            } catch (err) { console.error("Auth error:", err); }
-        };
-
-        onAuthStateChanged(auth, (user) => {
-            currentUser = user;
-            if (user && !document.getElementById('page-admin').classList.contains('hidden')) {
-                initLeadsListener();
-            }
-        });
-
-        initAuth();
-
-        function initLeadsListener() {
-            if (unsubscribeLeads) unsubscribeLeads();
-            if (!currentUser) return;
-
+        function renderLeads() {
             const container = document.getElementById('leads-container');
-            container.innerHTML = '<div class="flex justify-center py-10"><div class="loader text-yellow-500"></div></div>';
+            const leads = getStoredLeads().sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
-            unsubscribeLeads = onSnapshot(getLeadsRef(), (snap) => {
-                container.innerHTML = '';
-                if (snap.empty) {
-                    container.innerHTML = '<p class="text-gray-500 text-center py-12">No lead records found.</p>';
-                    return;
-                }
+            if (!leads.length) {
+                container.innerHTML = '<p class="text-gray-500 text-center py-12">No lead records found.</p>';
+                return;
+            }
 
-                const leads = [];
-                snap.forEach(d => leads.push({ id: d.id, ...d.data() }));
-                leads.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+            container.innerHTML = '';
+            leads.forEach(lead => {
+                const el = document.createElement('div');
+                el.className = 'glass-card p-6 rounded-2xl flex flex-col gap-4 border-white/5';
 
-                leads.forEach(lead => {
-                    const el = document.createElement('div');
-                    el.className = 'glass-card p-6 rounded-2xl flex flex-col gap-4 border-white/5';
-                    
-                    el.innerHTML = `
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <p class="text-[9px] text-yellow-500 font-bold uppercase tracking-widest">${lead.type}</p>
-                                <p class="text-white font-bold text-lg">${lead.name || 'Anonymous'}</p>
-                                <p class="text-gray-400 text-xs font-mono">${lead.email || lead.phone || 'No Contact'}</p>
-                            </div>
-                            <button onclick="window.deleteLead('${lead.id}')" class="text-[9px] text-red-500/50 hover:text-red-500 uppercase font-black px-3 py-2 border border-red-500/20 rounded-lg transition-colors">Delete</button>
+                el.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-[9px] text-yellow-500 font-bold uppercase tracking-widest">${lead.type}</p>
+                            <p class="text-white font-bold text-lg">${lead.name || 'Anonymous'}</p>
+                            <p class="text-gray-400 text-xs font-mono">${lead.email || lead.phone || 'No Contact'}</p>
                         </div>
-                        <div class="text-[8px] text-gray-600 text-right mt-1 uppercase tracking-widest">${new Date(lead.timestamp).toLocaleString()}</div>
-                    `;
-                    container.appendChild(el);
-                });
-            }, (err) => {
-                container.innerHTML = `<p class="text-red-500 text-center py-12">Connection failed: ${err.message}</p>`;
+                        <button onclick="window.deleteLead('${lead.id}')" class="text-[9px] text-red-500/50 hover:text-red-500 uppercase font-black px-3 py-2 border border-red-500/20 rounded-lg transition-colors">Delete</button>
+                    </div>
+                    <div class="text-[8px] text-gray-600 text-right mt-1 uppercase tracking-widest">${new Date(lead.timestamp).toLocaleString()}</div>
+                `;
+                container.appendChild(el);
             });
         }
     </script>
